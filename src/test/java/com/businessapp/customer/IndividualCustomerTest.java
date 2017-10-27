@@ -41,7 +41,6 @@ public class IndividualCustomerTest {
     @Test
     public void name(){
         assertEquals(name1, a.getFirstName());
-        assertThat(id1 == a.getId(), is(true));
     }
 
     @Test
