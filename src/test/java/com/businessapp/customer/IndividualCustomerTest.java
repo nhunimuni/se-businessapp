@@ -18,7 +18,7 @@ public class IndividualCustomerTest {
     private String name1;
     private String name2;
     private String name3;
-    private String id1 = new String("Noah");
+    private String id1 = new String("Ken");
 
 
     @Before
@@ -41,20 +41,30 @@ public class IndividualCustomerTest {
     @Test
     public void name(){
         assertEquals(name1, a.getFirstName());
-        assertEquals(name2, b.getFirstName());
-        assertEquals(name3, c.getFirstName());
+        assertThat(id1 == a.getId(), is(true));
+    }
 
+    @Test
+    public void nullName(){
+        assertEquals(name2, b.getFirstName());
+    }
+
+    @Test
+    public void emptyStringName(){
+        assertEquals(name3, c.getFirstName());
+    }
+
+    @Test
+    public void sameObject(){
         assertThat(id1 == a.getId(), is(true));
     }
 
 
 
-    @Test
-    public void getFirstName() throws Exception {
-    }
 
-    @Test
-    public void setFirstName() throws Exception {
-    }
+
+
+
+
 
 }
