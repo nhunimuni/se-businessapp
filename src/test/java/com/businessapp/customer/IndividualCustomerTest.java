@@ -3,6 +3,9 @@ package com.businessapp.customer;
 import com.businessapp.model.IndividualCustomer;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runners.Suite;
+
+import java.util.Date;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
@@ -12,58 +15,83 @@ import static org.junit.Assert.*;
  */
 public class IndividualCustomerTest {
 
-    private IndividualCustomer a;
-    private IndividualCustomer b;
-    private IndividualCustomer c;
-    private String name1;
-    private String name2;
-    private String name3;
-    private String id1 = new String("Ken");
+
 
 
     @Before
-    public void setUp() {
-        a = new IndividualCustomer();
+    /*public void setUp() {
+
+        //Person 1
         name1 = "Kenny";
-        a.setFirstName(name1);
+        lastname1 = "Park";
+        id1 = "A001";
+        a = new IndividualCustomer();
+        date = new Date(2000, 06, 11);
 
-        b = new IndividualCustomer();
-        name2 = null;
-        b.setFirstName(name2);
-
-        c = new IndividualCustomer();
-        name3 = "";
-        c.setFirstName(name3);
-
-        a.setId(id1);
-    }
+    }*/
 
     @Test
-    public void name(){
+    public void firstName(){
+        IndividualCustomer a = new IndividualCustomer();
+
+        a.setFirstName("Kenny");
+        String name1 = a.getFirstName();
+        assertEquals(name1, a.getFirstName());
+
+        a.setFirstName(null);
+        name1 = a.getFirstName();
+        assertEquals(name1, a.getFirstName());
+
+        a.setFirstName("");
+        name1 = a.getFirstName();
         assertEquals(name1, a.getFirstName());
     }
 
     @Test
-    public void nullName(){
-        assertEquals(name2, b.getFirstName());
+    public void lastName(){
+        IndividualCustomer a = new IndividualCustomer();
+
+        a.setName("Tom");
+        String name1 = a.getName();
+        assertEquals(name1, a.getName());
+
+        a.setName(null);
+        name1 = a.getName();
+        assertEquals(name1, a.getName());
+
+        a.setName("");
+        name1 = a.getName();
+        assertEquals(name1, a.getName());
     }
 
     @Test
-    public void emptyStringName(){
-        assertEquals(name3, c.getFirstName());
+    public void id(){
+        IndividualCustomer a = new IndividualCustomer();
+
+        a.setId("A100");
+        String name1 = a.getId();
+        assertEquals(name1, a.getId());
+
+        a.setId(null);
+        name1 = a.getId();
+        assertEquals(name1, a.getId());
+
+        a.setId("");
+        name1 = a.getId();
+        assertEquals(name1, a.getId());
     }
 
     @Test
-    public void sameObject(){
-        assertThat(id1 == a.getId(), is(true));
+    public void created(){
+        IndividualCustomer a = new IndividualCustomer();
+
+        a.setCreated(new Date(2000, 06, 11));
+        Date date = a.getCreated();
+        assertEquals(date, a.getCreated());
+
+        a.setCreated(null);
+        date = a.getCreated();
+        assertEquals(date, a.getCreated());
     }
-
-
-
-
-
-
-
-
 
 }
