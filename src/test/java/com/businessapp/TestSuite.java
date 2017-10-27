@@ -17,6 +17,6 @@ import com.businessapp.customer.IndividualCustomerTest;
         })
 
 
-class TestSuite {
+public class TestSuite {
 
 }
