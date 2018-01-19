@@ -14,21 +14,25 @@ public interface CalculatorLogicIntf extends LogicIntf {
 	final double VAT_RATE = 19.0;		// 19% VAT in Germany
 
 	enum Token {
+		K_KAuf, K_KZu, K_Nichts , K_Nichts2,
 		K_VAT,	K_CE,	K_C,	K_BACK,
 		K_MPLUS,K_MR,	K_MC,	K_DIV,
 		K_7,	K_8,	K_9,	K_MUL,
 		K_4,	K_5,	K_6,	K_MIN,
 		K_1,	K_2,	K_3,	K_PLUS,
 		K_0,	K_1000,	K_DOT,	K_EQ,
+
 	};
 
 	final String[] KeyLabels = new String[] {
+			"(" , ")", " " , " ",
 		"MwSt",	"CE",	"C",	"<-",
 		"M+",	"MR",	"MC",	"/",
 		"7",	"8",	"9",	"*",
 		"4",	"5",	"6",	"-",
 		"1",	"2",	"3",	"+",
-		"0",	"1000",	",",	"=",
+		"0",	"1000",	".",	"=",
+
 	};
 
 	final Object[][] ShortCutKeys = new Object[][] {
